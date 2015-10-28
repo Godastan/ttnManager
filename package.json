@@ -1,0 +1,23 @@
+{
+  "name": "ttn_manager",
+  "version": "1.0.0",
+  "description": "ttn manager",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godastan/ttnManager.git"
+  },
+  "author": "Godastan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Godastan/ttnManager/issues"
+  },
+  "homepage": "https://github.com/Godastan/ttnManager#readme",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "bootstrap": "^3.3.5"
+  }
+}

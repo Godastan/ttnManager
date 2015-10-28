@@ -1,0 +1,22 @@
+{
+  "name": "ttn_manager",
+  "description": "ttn manager",
+  "main": "index.html",
+  "authors": [
+    "Godastan"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Godastan/ttnManager",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
