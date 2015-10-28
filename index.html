@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="styles/style.css"/>
+
+    <title>TTN Manager</title>
+</head>
+<body ng-app="TtnApp">
+<div class="container-fluid">
+    <div class="panel-group" id="accordion" role="tablist">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" href="#collapseOne">
+                        Список накладных
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
+                <div class="panel-body">
+                    <div class="row" ng-controller="TtnController as ttnCtrl">
+                        <ul class="list-group">
+                            <li class="list-group-item hover" ng-repeat="ttn in ttnCtrl.ttns track by $index">
+                                <div class="row form-inline">
+
+                                    <div class="col-lg-8" ng-hide="ttnCtrl.editingIndex === $index">
+                                        <span>ТТН № {{ttn.number}} от {{ttn.dateFrom}}</span>
+                                    </div>
+
+                                    <div class="col-lg-4" ng-hide="ttnCtrl.editingIndex === $index">
+                                        <button type="button" class="btn btn-default btn-xs col-lg-4" ng-click="ttnCtrl.startEdit($index)">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-xs col-lg-offset-4 col-lg-4" ng-click="ttnCtrl.delete($index)">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-lg-8 form-group" ng-show="ttnCtrl.editingIndex === $index">
+                                        <label>ТТН № <input type="text" size="10" class="form-control input-xs" ng-model="ttn.number"/></label>
+                                        <label>от <input type="text" size="6" class="form-control input-xs" ng-model="ttn.dateFrom"/></label>
+                                    </div>
+
+                                    <div class="col-lg-4" ng-show="ttnCtrl.editingIndex === $index">
+                                        <button type="button" class="btn btn-success btn-xs col-lg-4" ng-click="ttnCtrl.cancelEdit($index)">
+                                            <span class="glyphicon glyphicon-ok"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="list-group-item hover" ng-show="ttnCtrl.editingIndex === null">
+                                <button type="button" class="btn btn-success btn-xl" ng-click="ttnCtrl.add()">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo">
+                        Список товаров
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                    <div class="row" ng-controller="ProductController as prodCtrl">
+                        <ul class="list-group">
+                            <li class="list-group-item hover" ng-repeat="product in prodCtrl.products track by $index">
+                                <div class="row">
+
+                                    <div class="col-lg-6" ng-hide="prodCtrl.editingIndex === $index">
+                                        <div class="col-lg-6">{{product.title}}</div>
+                                        <div class="col-lg-1">{{product.quantity}}</div>
+                                        <div class="col-lg-2">{{product.basePrice}}</div>
+                                        <div class="col-lg-1">{{product.nds}}</div>
+                                    </div>
+
+                                    <div class="col-lg-6" ng-hide="prodCtrl.editingIndex === $index">
+                                        <button type="button" class="btn btn-default btn-xs col-lg-4" ng-click="prodCtrl.startEdit($index)">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-xs col-lg-offset-4 col-lg-4" ng-click="prodCtrl.delete($index)">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="col-lg-6" ng-show="prodCtrl.editingIndex === $index">
+                                        <div class="col-lg-6"><input type="text"  class="form-control input-xs" ng-model="product.title"/></div>
+                                        <div class="col-lg-1"><input type="text" class="form-control input-xs" ng-model="product.quantity"/></div>
+                                        <div class="col-lg-2"><input type="text" class="form-control input-xs" ng-model="product.basePrice"/></div>
+                                        <div class="col-lg-1"><input type="text" class="form-control input-xs" ng-model="product.nds"/></div>
+                                    </div>
+
+                                    <div class="col-lg-6" ng-show="prodCtrl.editingIndex === $index">
+                                        <button type="button" class="btn btn-success btn-xs col-lg-4" ng-click="prodCtrl.cancelEdit($index)">
+                                            <span class="glyphicon glyphicon-ok"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="list-group-item hover" ng-show="prodCtrl.editingIndex === null">
+                                <button type="button" class="btn btn-success btn-xl" ng-show="prodCtrl.editingIndex === null" ng-click="prodCtrl.add()">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
