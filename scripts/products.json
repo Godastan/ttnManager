@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "ttnId": 3,
+    "title": "Шампунь",
+    "quantity": 1,
+    "basePrice": 18100,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 2,
+    "ttnId": 3,
+    "title": "Салфетки",
+    "quantity": 12,
+    "basePrice": 12200,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 3,
+    "ttnId": 3,
+    "title": "Подгузники",
+    "quantity": 54,
+    "basePrice": 13300,
+    "nds": 10,
+    "status": 0
+  },
+  {
+    "id": 4,
+    "ttnId": 3,
+    "title": "Дезодорант",
+    "quantity": 2,
+    "basePrice": 25400,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 5,
+    "ttnId": 3,
+    "title": "Мешки для мусора",
+    "quantity": 33,
+    "basePrice": 22200,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 6,
+    "ttnId": 3,
+    "title": "Стиральный порошок",
+    "quantity": 8,
+    "basePrice": 56900,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 7,
+    "ttnId": 3,
+    "title": "Перчатки",
+    "quantity": 5,
+    "basePrice": 1100,
+    "nds": 10,
+    "status": 0
+  },
+  {
+    "id": 8,
+    "ttnId": 3,
+    "title": "Чистящее средство",
+    "quantity": 3,
+    "basePrice": 25600,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 9,
+    "ttnId": 3,
+    "title": "Бальзам-кондиционер",
+    "quantity": 56,
+    "basePrice": 65900,
+    "nds": 20,
+    "status": 0
+  },
+  {
+    "id": 10,
+    "ttnId": 3,
+    "title": "Антиперспирант",
+    "quantity": 4,
+    "basePrice": 340000,
+    "nds": 20,
+    "status": 0
+  }
+]

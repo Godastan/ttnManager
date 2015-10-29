@@ -37,21 +37,26 @@
                                     </div>
 
                                     <div class="col-lg-4" ng-hide="ttnCtrl.editingIndex === $index">
-                                        <button type="button" class="btn btn-default btn-xs col-lg-4" ng-click="ttnCtrl.startEdit($index)">
+                                        <button type="button" class="btn btn-default btn-xs col-lg-4"
+                                                ng-click="ttnCtrl.startEdit($index)">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
-                                        <button type="button" class="btn btn-danger btn-xs col-lg-offset-4 col-lg-4" ng-click="ttnCtrl.delete($index)">
+                                        <button type="button" class="btn btn-danger btn-xs col-lg-offset-4 col-lg-4"
+                                                ng-click="ttnCtrl.delete($index)">
                                             <span class="glyphicon glyphicon-trash"></span>
                                         </button>
                                     </div>
 
                                     <div class="col-lg-8 form-group" ng-show="ttnCtrl.editingIndex === $index">
-                                        <label>ТТН № <input type="text" size="10" class="form-control input-xs" ng-model="ttn.number"/></label>
-                                        <label>от <input type="text" size="6" class="form-control input-xs" ng-model="ttn.dateFrom"/></label>
+                                        ТТН № <input type="text" size="10" class="form-control input-xs"
+                                                     ng-model="ttn.number"/>
+                                        от <input type="text" size="6" class="form-control input-xs"
+                                                  ng-model="ttn.dateFrom"/>
                                     </div>
 
                                     <div class="col-lg-4" ng-show="ttnCtrl.editingIndex === $index">
-                                        <button type="button" class="btn btn-success btn-xs col-lg-4" ng-click="ttnCtrl.cancelEdit($index)">
+                                        <button type="button" class="btn btn-success btn-xs col-lg-4"
+                                                ng-click="ttnCtrl.cancelEdit($index)">
                                             <span class="glyphicon glyphicon-ok"></span>
                                         </button>
                                     </div>
@@ -92,23 +97,30 @@
                                     </div>
 
                                     <div class="col-lg-6" ng-hide="prodCtrl.editingIndex === $index">
-                                        <button type="button" class="btn btn-default btn-xs col-lg-4" ng-click="prodCtrl.startEdit($index)">
+                                        <button type="button" class="btn btn-default btn-xs col-lg-4"
+                                                ng-click="prodCtrl.startEdit($index)">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
-                                        <button type="button" class="btn btn-danger btn-xs col-lg-offset-4 col-lg-4" ng-click="prodCtrl.delete($index)">
+                                        <button type="button" class="btn btn-danger btn-xs col-lg-offset-4 col-lg-4"
+                                                ng-click="prodCtrl.delete($index)">
                                             <span class="glyphicon glyphicon-trash"></span>
                                         </button>
                                     </div>
 
                                     <div class="col-lg-6" ng-show="prodCtrl.editingIndex === $index">
-                                        <div class="col-lg-6"><input type="text"  class="form-control input-xs" ng-model="product.title"/></div>
-                                        <div class="col-lg-1"><input type="text" class="form-control input-xs" ng-model="product.quantity"/></div>
-                                        <div class="col-lg-2"><input type="text" class="form-control input-xs" ng-model="product.basePrice"/></div>
-                                        <div class="col-lg-1"><input type="text" class="form-control input-xs" ng-model="product.nds"/></div>
+                                        <div class="col-lg-6"><input type="text" class="form-control input-xs"
+                                                                     ng-model="product.title"/></div>
+                                        <div class="col-lg-1"><input type="text" class="form-control input-xs"
+                                                                     ng-model="product.quantity"/></div>
+                                        <div class="col-lg-2"><input type="text" class="form-control input-xs"
+                                                                     ng-model="product.basePrice"/></div>
+                                        <div class="col-lg-1"><input type="text" class="form-control input-xs"
+                                                                     ng-model="product.nds"/></div>
                                     </div>
 
                                     <div class="col-lg-6" ng-show="prodCtrl.editingIndex === $index">
-                                        <button type="button" class="btn btn-success btn-xs col-lg-4" ng-click="prodCtrl.cancelEdit($index)">
+                                        <button type="button" class="btn btn-success btn-xs col-lg-4"
+                                                ng-click="prodCtrl.cancelEdit($index)">
                                             <span class="glyphicon glyphicon-ok"></span>
                                         </button>
                                     </div>
@@ -116,7 +128,8 @@
                                 </div>
                             </li>
                             <li class="list-group-item hover" ng-show="prodCtrl.editingIndex === null">
-                                <button type="button" class="btn btn-success btn-xl" ng-show="prodCtrl.editingIndex === null" ng-click="prodCtrl.add()">
+                                <button type="button" class="btn btn-success btn-xl"
+                                        ng-show="prodCtrl.editingIndex === null" ng-click="prodCtrl.add()">
                                     <span class="glyphicon glyphicon-plus"></span>
                                 </button>
                             </li>
